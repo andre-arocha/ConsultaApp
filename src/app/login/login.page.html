@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Faça seu Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">E-mail</ion-label>
+    <ion-input type="email" [(ngModel)]="usuario" placeholder="email@dominio.com"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input [type]="isTextFieldType ? 'text' : 'password'" [(ngModel)]='senha' placeholder="Sua senha"></ion-input>
+    <ion-button (click)="mostrarSenha()" slot="end" color="light">
+      <ion-icon [name]="isTextFieldType ? 'eye-off' : 'eye'" ></ion-icon>
+    </ion-button>   
+  </ion-item>
+  
+
+  <ion-button expand="block" color="secondary" (click)="login()">Logar</ion-button>
+  <ion-button expand="block" color="success" (click)="cadastrar()">Cadastrar</ion-button>
+</ion-content>

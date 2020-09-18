@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Sobre o APP</ion-title>
+    <ion-buttons slot="end" (click)="logout()">
+      <ion-button >
+        <ion-icon name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- <ion-item>
+    <img src="../../assets/icon/mais.png" alt="logo" class="img">
+  </ion-item> -->
+  
+  <h2 class="titulo">Agendamento de consulta</h2>
+  <p class="text">O agendamente de consultas online tem facilitado cada vez mais a 
+    vida dos pacientes. Afinal, não é preciso esperar muito tempo até ser atendido. 
+    O método online permite ao paciente mais praticidade, visto que não há intermediários. <br><br>
+
+    Além disso, ele é eficiente para todos os perfis de pacientes, pois funciona 24 horas por dia 
+    e sete dias na semana. Outro ponto positivo é que o sistema mostra todos os horários livres, 
+    o que aumenta o poder de decisão do usuário e torna o atendimento mais rápido. <br><br>
+    
+    No entanto, para agendar é preciso primeiramente escolher um médico online de confiança. 
+    Aliás, foi pensando exatamente nisso que montamos este post. Aqui você vai entender o que 
+    levar em conta para escolher um bom profissional para o seu problema de saúde!</p>
+    
+    <ion-button expand="block" color="tertiary" (click)="agendar()"><ion-icon name="add-outline"></ion-icon> Agendar Consulta</ion-button>
+
+
+</ion-content>
+
+

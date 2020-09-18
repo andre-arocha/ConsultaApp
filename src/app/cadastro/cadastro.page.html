@@ -1,0 +1,76 @@
+<ion-content>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" (click)="voltarLogin()">
+      <ion-button>
+        <ion-icon name="arrow-undo-outline" slot="start"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title >Dados Pessoais</ion-title>
+  </ion-toolbar>
+
+  <ion-item>
+    <ion-label position="floating">Nome Completo</ion-label>
+    <ion-input [(ngModel)]="nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">CPF</ion-label>
+    <ion-input type="text" [(ngModel)]="cpf"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Telefone</ion-label>
+    <ion-input type="text" [(ngModel)]="telefone"></ion-input>
+  </ion-item>
+
+  <ion-toolbar color="primary">
+    <ion-title>Dados Endereço</ion-title>
+  </ion-toolbar>
+
+  <ion-item>
+    <ion-label position="floating">CEP</ion-label>
+    <ion-input type="text" [(ngModel)]="cep"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Endereço</ion-label>
+    <ion-input [(ngModel)]="endereco"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Número</ion-label>
+    <ion-input type="text" [(ngModel)]="numero"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Complemento</ion-label>
+    <ion-input [(ngModel)]="complemento"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Bairro</ion-label>
+    <ion-input [(ngModel)]="bairro"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Cidade</ion-label>
+    <ion-input [(ngModel)]="cidade"></ion-input>
+  </ion-item>
+
+  <ion-toolbar color="primary">
+    <ion-title>Dados Login</ion-title>
+  </ion-toolbar>
+
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="usuario"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input [(ngModel)]="senha"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Nível</ion-label>
+    <ion-select placeholder="Selecione..." [(ngModel)]="nivel">
+      <ion-select-option value="paciente">Paciente</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br>
+
+  <ion-button expand="block" color="success" (click)="cadastrar()">Cadastrar</ion-button>
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start" (click)="voltarHome()">
+      <ion-button>
+        <ion-icon name="arrow-undo-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+      
+    <ion-title >Agendar</ion-title>
+      
+    <ion-buttons slot="end" (click)="logout()">
+      <ion-button>
+        <ion-icon  name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngIf="consultas.length < 1">
+      <ion-label>Não há consultas...</ion-label>
+    </ion-item>
+    <ion-item-sliding *ngFor="let consulta of consultas">
+      <ion-item (click)="abrirAcoes(consulta)">
+        <ion-label *ngIf='!consulta.feito'><b>Paciente:</b><br> {{consulta.nome}}</ion-label>
+        <ion-label *ngIf='consulta.feito'><b>Paciente:</b><br> {{consulta.nome}} <br><br><b>Consulta <br> realizada!</b></ion-label>
+        <ion-icon *ngIf='!consulta.feito' slot="start" name="radio-button-off" color="success"></ion-icon>
+        <ion-icon *ngIf='consulta.feito' slot="start" name="checkmark-circle" color="success"></ion-icon>
+
+      <ion-list>
+        <br>
+        <ion-label *ngIf='!consulta.mostrar'></ion-label>
+
+        <ion-label *ngIf='!consulta.feito'><b>Consulta:</b> {{consulta.consulta}}</ion-label>
+        <ion-label *ngIf='consulta.feito'><b>Consulta:</b><s> {{consulta.consulta}} </s></ion-label>
+
+        <ion-label *ngIf='!consulta.feito'><b>Data:</b> {{consulta.data}}</ion-label>
+        <ion-label *ngIf='consulta.feito'><b>Data:</b><s> {{consulta.data}} </s></ion-label>
+
+        <ion-label *ngIf='!consulta.feito'><b>Horario:</b> {{consulta.hora}}</ion-label>
+        <ion-label *ngIf='consulta.feito'><b>Horario:</b><s> {{consulta.hora}} </s></ion-label>
+        <br>
+      </ion-list>
+
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="tertiary" (click)="adicionarConsulta()"> 
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  
+</ion-content>
